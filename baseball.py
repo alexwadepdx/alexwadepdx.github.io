@@ -33,6 +33,7 @@ def plate_appearance():
     balls = 0
     strikes = 0
     innings = 1
+    show_innings = "Bottom of the first"
     home_score = 0
     away_score = 0
     first_base = 0
@@ -51,9 +52,9 @@ def plate_appearance():
                     print (f'{away_team} - {away_score}')
                     print (f'{home_team} - {home_score}')
                     break
-                if innings == 1:
-                    show_innings = str(innings) + "st"
-                elif innings == 2:
+                #if innings == 1:
+                    #show_innings = str(innings) + "st"
+                if innings == 2:
                     show_innings = str(innings) + "nd"
                 elif innings == 3:
                     show_innings = str(innings) + "rd"
@@ -94,6 +95,10 @@ def plate_appearance():
                         print (f'{outs} down')
                         if outs > 2:
                             print("switch sides")
+                            if hidden_outs < 2:
+                                print(f'bottom of the {show_innings}')
+                            if hidden_outs > 3:
+                                print (f'top of the {show_innings}')
                             outs = 0
                             first_base = 0
                             second_base = 0
@@ -113,6 +118,10 @@ def plate_appearance():
                     print(f'{outs} down')
                     if outs > 2:
                         print("switch sides")
+                        if hidden_outs < 2:
+                            print(f'bottom of the {show_innings}')
+                        elif hidden_outs > 3:
+                                print (f'top of the {show_innings}')
                         outs = 0
                         first_base = 0
                         second_base = 0
@@ -126,6 +135,10 @@ def plate_appearance():
                 print(f'{outs} down')
                 if outs > 2:
                         print("switch sides")
+                        if hidden_outs < 2:
+                            print(f'bottom of the {show_innings}')
+                        if hidden_outs > 3:
+                            print (f'top of the {show_innings}')
                         outs = 0
                         first_base = 0
                         second_base = 0
@@ -139,6 +152,10 @@ def plate_appearance():
                 print(f'{outs} down')
                 if outs > 2:
                         print("switch sides")
+                        if hidden_outs < 2:
+                            print(f'bottom of the {show_innings}')
+                        if hidden_outs > 3:
+                            print (f'top of the {show_innings}')
                         outs = 0
                         first_base = 0
                         second_base = 0
@@ -244,6 +261,7 @@ game()
 
 
 #### To Do ####
+    # write a function that will call top or bottom of the inning(Priority #1)
     # Bottom of the 9th should not be played if home team is winning
     # Extra innings
     # Switch "down" to "out"

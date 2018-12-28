@@ -4,6 +4,8 @@ import random
 import baseball
 
 
+
+
 def stolen_base():
     stolen_base = False
     number = random.randint(1, 10)
